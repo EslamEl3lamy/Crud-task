@@ -1,0 +1,16 @@
+<div class="container">
+  <h1 class="text-center">List Of Users</h1>
+
+  <a href="#" routerLink="/post/create/" class="btn btn-success my-4">Create New User</a>
+
+  <section *ngIf="posts" id="users-section" class="row">
+    <div *ngFor="let post of posts" class="card col-md-3">
+      <div routerLink="/post/{{post.id}}/edit" class="card-body">
+        <h5 class="card-title">{{post.first_name}}</h5>
+        <p class="card-text">{{post.email}}</p>
+        <img [src]="post.avatar" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </section>
+
+</div>

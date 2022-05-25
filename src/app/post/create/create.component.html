@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 *ngIf="isEdit()">Update User</h1>
+  <h1 *ngIf="!isEdit()">Create New User</h1>
+
+  <!-- <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a> -->
+
+  <form (ngSubmit)="submit()" [formGroup]="form">
+    <div class="form-group mt-4">
+      <label for="email">Email</label>
+      <input formControlName="email" type="text" class="form-control">
+    </div>
+
+    <div class="form-group mt-4">
+      <label for="first_name">First Name</label>
+      <input formControlName="first_name" type="text" class="form-control">
+    </div>
+    <div class="form-group mt-4">
+      <label for="last_name">Last Name</label>
+      <input formControlName="last_name" type="text" class="form-control">
+    </div>
+    <div class="form-group mt-4">
+      <label for="avatar">Avatar</label>
+      <input formControlName="avatar" type="text" class="form-control">
+    </div>
+    <button class="btn btn-primary mt-3" type="submit">Submit</button>
+    <button *ngIf="isEdit()" type="button" class="btn btn-danger mx-2 mt-3" (click)="delete()">Delete</button>
+  </form>
+</div>
